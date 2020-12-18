@@ -47,6 +47,11 @@ class OverviewFragment : Fragment() {
         rvMovies.adapter = movieAdapter
     }
 
+    /**
+     *  Method for observing the movies list, first clear then add all and notify that the data set
+     *  been changed
+     */
+
     private fun observeMovies() {
         viewModel.movies.observe(viewLifecycleOwner, Observer {
             movies.clear()
@@ -55,11 +60,19 @@ class OverviewFragment : Fragment() {
         })
     }
 
-    private fun onMovieClick(movieDetail: MovieDetail.Result?) {
-        val fragment = OverviewFragment()
+    /**
+     *  Method for sending data on an click event from the overview to the moviefragment in an intent
+     */
+
+    private fun onMovieClick(movieDetail: MovieDetail.Result) {
+        // init fragment for sending it to the right fragment
+//        val fragment = OverviewFragment()
+        // init bundle for sending the object from the movie detail
         val bundle = Bundle()
+        // put it in a bundle, then add the object that you would like to send
         bundle.putParcelable("MOVIE", movieDetail)
-        fragment.arguments = bundle
+//        // not needed
+//        fragment.arguments = bundle
         findNavController().navigate(R.id.action_OverviewFragment_to_movieFragment, bundle)
     }
 }

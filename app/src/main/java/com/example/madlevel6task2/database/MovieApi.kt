@@ -10,11 +10,6 @@ class MovieApi {
     companion object {
         // base url of the api
         private const val BASEURL = "https://api.themoviedb.org"
-        val API_KEY = "87ab60fedd6f3cef8d4bb07296f9e564"
-        val PAGE = 1
-        val INCLUDE_VIDEO = false
-        val INCLUDE_ADULT = false
-
 
         // service class of the api
         fun createApi(): MovieApiService {

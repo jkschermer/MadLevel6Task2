@@ -26,7 +26,11 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setHasOptionsMenu(true)
+//        setHasOptionsMenu(true)
+        initView()
+    }
+
+    private fun initView() {
         val movieDetail: MovieDetail.Result? = this.arguments?.getParcelable("MOVIE")
 
         context?.let { Glide.with(it).load(movieDetail?.imageGetUrlBackground()) }?.into(ivMovieBackground)

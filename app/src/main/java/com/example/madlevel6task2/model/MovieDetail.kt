@@ -40,7 +40,7 @@ data class MovieDetail(
         val voteCount: Int
     ) : Parcelable
     {
-        fun imageGetUrlPoster() = "https://image.tmdb.org/t/p/w300$posterPath"
+        fun imageGetUrlPoster() = "https://image.tmdb.org/t/p/w400$posterPath"
 
         fun imageGetUrlBackground() = "https://image.tmdb.org/t/p/w300$backdropPath"
     }
